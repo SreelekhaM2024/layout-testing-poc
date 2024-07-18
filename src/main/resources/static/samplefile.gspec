@@ -1,0 +1,13 @@
+@objects
+  # general objects
+  email     id      email
+  fb_logo   css     img[src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg"]
+  
+ 
+= Page: Login page =
+  @on chrome
+      email:
+          width 364px
+          height 15px
+      fb_logo:
+      	  visible

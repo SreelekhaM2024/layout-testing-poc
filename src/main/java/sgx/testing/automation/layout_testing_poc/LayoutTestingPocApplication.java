@@ -28,7 +28,7 @@ public class LayoutTestingPocApplication {
 		try {
 			driver.get("https://www.facebook.com/");  
 			// C:\\Users\\SreelekhaMallojwala\\eclipse-workspace\\LayoutTestingPOC\\src\\main\\java\\LayoutTesting\\
-			LayoutReport layoutReport = Galen.checkLayout(driver,"samplefile.gspec",Arrays.asList("chrome"));
+			LayoutReport layoutReport = Galen.checkLayout(driver,"C:\\Users\\SreelekhaMallojwala\\Projects-poc\\layout-testing-poc\\src\\main\\resources\\static\\samplefile.gspec",Arrays.asList("chrome"));
 			List<GalenTestInfo> tests = new LinkedList<GalenTestInfo>();
 			GalenTestInfo test = GalenTestInfo.fromString("Verifying Email width & Facebook logo visibilty on Facebook login Page");
 			test.getReport().layout(layoutReport, "check layout on Facebook login Page");
