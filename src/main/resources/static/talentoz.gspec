@@ -1,0 +1,22 @@
+@objects
+
+# general objects
+    userName id undivname
+    solugenix_logo css img[src="UploadedFiles/Client199/CompanyLogo/2024251709613200598104001816583671.jpg"]
+ 
+# widgets
+    checkInBtn id div_Wid_DTR_Chk_btn_chIn_div_DshWdgtCon_2167
+    checkOutBtn id div_Wid_DTR_Chk_btn_chIn_div_DshWdgtCon_2167
+    viewDTRBtn id div_Wid_DTR_Chk_btn_DTR_div_DshWdgtCon_2167
+    dateTimeBox id div_DTR_Server_TimeBdyWid_div_DshWdgtCon_2167
+    workingHours id div_DTR_Chk_TimeBdyWid_div_DshWdgtCon_2167
+    upcomingBirthday id div_BirthWdHdr_div_DshWdgtCon_2167
+    Carrerslink xpath //*[@id="itemWL_7_Web_lnl_lstdiv_DshWdgtCon_2167"]/a/div[1]
+ 
+ 
+= Page: Login page =
+    @on chrome
+    solugenix_logo:
+        visible
+        height 40px
+       
