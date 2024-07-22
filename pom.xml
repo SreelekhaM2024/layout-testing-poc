@@ -43,6 +43,11 @@
 			<artifactId>google-http-client-jackson2</artifactId>
 			<version>1.44.2</version>
 		</dependency>
+		<dependency>
+			<groupId>layoutTestingPOC</groupId>
+			<artifactId>layoutTesting</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>
