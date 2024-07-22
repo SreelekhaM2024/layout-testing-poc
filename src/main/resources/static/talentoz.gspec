@@ -12,11 +12,12 @@
     workingHours id div_DTR_Chk_TimeBdyWid_div_DshWdgtCon_2167
     upcomingBirthday id div_BirthWdHdr_div_DshWdgtCon_2167
     Carrerslink xpath //*[@id="itemWL_7_Web_lnl_lstdiv_DshWdgtCon_2167"]/a/div[1]
- 
+    DTR_Widget_box css div[id*='div_WebCheckINDTR_Hdrdiv_DshWdgtCon']
  
 = Page: Login page =
     @on chrome
     solugenix_logo:
         visible
         height 40px
-       
+    DTR_Widget_box:
+    	color-scheme >95% #de567a  
