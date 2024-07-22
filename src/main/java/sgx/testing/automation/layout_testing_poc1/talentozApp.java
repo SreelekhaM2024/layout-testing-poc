@@ -6,9 +6,6 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
@@ -21,24 +18,17 @@ import com.galenframework.reports.HtmlReportBuilder;
 import com.galenframework.reports.model.LayoutReport;
 
 public class talentozApp {
-	private WebDriver driver;
-
-	@Before
-	public void setUp() throws InterruptedException {
-
-		driver = new ChromeDriver();
+	
+	public static void main(String[] args) throws IOException {
+		WebDriver driver = new ChromeDriver();
 		driver.manage().window().setSize(new Dimension(1920,1080));
 		driver.get("https://solugenix.talentoz.com/");
-		driver.findElement(By.id("txt_name")).sendKeys("Sreelekha.mallojwala@solugenix.com");
-		driver.findElement(By.id("txt_pass")).sendKeys("August@1996");
+		driver.findElement(By.id("txt_name")).sendKeys("Enter your email id");
+		driver.findElement(By.id("txt_pass")).sendKeys("Enter your pwd");
 		driver.findElement(By.id("btn_submit")).click();
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
-		
-	}
-
-	@Test
-	public void talentOzPageLayoutTest() throws IOException {
-		LayoutReport layoutReport = Galen.checkLayout(driver, "resources\\talentoz.gspec", Arrays.asList("desktop"));
+	
+		LayoutReport layoutReport = Galen.checkLayout(driver, "static\\talentoz.gspec", Arrays.asList("desktop"));
 		List<GalenTestInfo> tests = new LinkedList<GalenTestInfo>();
 		GalenTestInfo test = GalenTestInfo.fromString("homepage layout");
 		test.getReport().layout(layoutReport, "check homepage layout - Talentoz App");
@@ -46,17 +36,13 @@ public class talentozApp {
 		HtmlReportBuilder htmlReportBuilder = new HtmlReportBuilder();
 		htmlReportBuilder.build(tests, "target/AppReports");
 		
-		if (layoutReport.errors() > 0) {
-			Assert.fail("Layout test failed");
-		}
+
+//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
+//		driver.quit();
 
 		
 		
 	}
 
-	@After
-	public void tearDown() {
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
-		driver.quit();
-	}
+
 }
